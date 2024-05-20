@@ -55,7 +55,7 @@ io.on("connection", (socket) => {
 
 app.use("/", routes);
 
-const port = "https://codex-realtime-app-7.onrender.com" || 3001;
+const port = 3001;
 server.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
