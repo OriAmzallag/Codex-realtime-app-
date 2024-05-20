@@ -12,7 +12,10 @@ const app = express();
 // CORS middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_URL, // Allow requests from this origin
+    origin: [
+      "https://codex-realtime-app.netlify.app",
+      "https://664bc92bda79e83a8db96297--codex-realtime-app.netlify.app",
+    ], // Add both URLs
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: "Content-Type, Authorization",
     credentials: true,
@@ -22,8 +25,10 @@ app.use(
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    // Allowing CORS from port 3000
-    origin: "https://codex-realtime-app.netlify.app",
+    origin: [
+      "https://codex-realtime-app.netlify.app",
+      "https://664bc92bda79e83a8db96297--codex-realtime-app.netlify.app",
+    ],
     methods: ["GET", "POST"],
   },
 });
