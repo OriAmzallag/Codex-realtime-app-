@@ -5,7 +5,7 @@ import "codemirror/mode/javascript/javascript";
 import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom"; // Import withRouter
 
-const ForthCase = () => {
+const CallbackCase = () => {
   const [editorValue, setEditorValue] = useState("");
   const [isReadOnly, setReadOnly] = useState(false);
   const [socket, setSocket] = useState(null);
@@ -14,7 +14,7 @@ const ForthCase = () => {
     // Function to fetch data from db.
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/ForthCase");
+        const response = await fetch("http://localhost:3001/CallbackCase");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -61,7 +61,7 @@ const ForthCase = () => {
 
   return (
     <>
-      <h1>Async Case: Incorrect Async Function Usage</h1>
+      <h1>Event Handling Case: Preventing Default Behavior</h1>
       <div>
         <CodeMirror
           value={editorValue}
@@ -80,8 +80,7 @@ const ForthCase = () => {
   );
 };
 
-export default ForthCase;
-
+export default CallbackCase;
 
 
 

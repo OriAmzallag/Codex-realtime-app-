@@ -12,28 +12,28 @@ const HomePage = () => {
         <button
           type="button"
           className="button"
-          onClick={() => navigate("./FirstCase")}
+          onClick={() => navigate("./AsyncCase")}
         >
           Async Case
         </button>
         <button
           type="button"
           className="button"
-          onClick={() => navigate("./SecondCase")}
+          onClick={() => navigate("./LoopCase")}
         >
           Loop Case
         </button>
         <button
           type="button"
           className="button"
-          onClick={() => navigate("./ThirdCase")}
+          onClick={() => navigate("./CallbackCase")}
         >
           Callback Case
         </button>
         <button
           type="button"
           className="button"
-          onClick={() => navigate("./ForthCase")}
+          onClick={() => navigate("./EventHandlingCase")}
         >
           Event Handling Case
         </button>

@@ -5,7 +5,7 @@ import "codemirror/mode/javascript/javascript";
 import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom"; // Import withRouter
 
-const SecondCase = () => {
+const EventHandlingCase = () => {
   const [editorValue, setEditorValue] = useState("");
   const [isReadOnly, setReadOnly] = useState(false);
   const [socket, setSocket] = useState(null);
@@ -14,7 +14,7 @@ const SecondCase = () => {
     // Function to fetch data from db.
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/SecondCase");
+        const response = await fetch("http://localhost:3001/EventHandlingCase");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -26,6 +26,7 @@ const SecondCase = () => {
     };
 
     fetchData();
+
     // Connection to the socket
     const socket = io.connect("http://localhost:3001");
     setSocket(socket);
@@ -38,7 +39,7 @@ const SecondCase = () => {
     socket.on("user status", (readOnly) => {
       setReadOnly(readOnly);
     });
-
+    
     // Cleanup function
     return () => {
       socket.off("recieve change");
@@ -60,7 +61,7 @@ const SecondCase = () => {
 
   return (
     <>
-      <h1>Loop Case: Misunderstanding Asynchronous Loops</h1>
+      <h1>Event Handling Case: Incorrect Async Function Usage</h1>
       <div>
         <CodeMirror
           value={editorValue}
@@ -79,7 +80,10 @@ const SecondCase = () => {
   );
 };
 
-export default SecondCase;
+export default EventHandlingCase;
+
+
+
 
 
 

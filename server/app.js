@@ -2,8 +2,20 @@ import express from "express";
 import http from "http";
 import { Server } from "socket.io";
 import routes from "./routers/routes.js";
+import cors from "cors";
 
 const app = express();
+
+// CORS middleware
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Allow requests from this origin
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: "Content-Type, Authorization",
+    credentials: true,
+  })
+);
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -42,7 +54,8 @@ io.on("connection", (socket) => {
 });
 
 app.use("/", routes);
-const port = 3001;
+
+const port = "https://codex-realtime-app-7.onrender.com" || 3001;
 server.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });

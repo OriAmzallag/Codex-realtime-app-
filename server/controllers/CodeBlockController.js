@@ -4,16 +4,16 @@ async function getCodeBlockByCaseName(caseName) {
   try {
     let serial;
     switch (caseName) {
-      case "FirstCase":
+      case "AsyncCase":
         serial = 1;
         break;
-      case "SecondCase":
+      case "LoopCase":
         serial = 2;
         break;
-      case "ThirdCase":
+      case "CallbackCase":
         serial = 3;
         break;
-      case "ForthCase":
+      case "EventHandlingCase":
         serial = 4;
         break;
       default:

@@ -1,16 +1,21 @@
 import { Sequelize, DataTypes } from "sequelize";
 
-const sequelize = new Sequelize({
-  database: "world",
-  username: "postgres",
-  password: "1234",
-  host: "localhost",
-  port: 5432,
-  dialect: "postgres",
-});
+const sequelize = new Sequelize(
+  "postgres://codeblocks_0g0b_user:jr7uxTmX3nrQrqBFPMU2zAOiBPlsds0k@dpg-cp5m4221hbls73fi2j1g-a.oregon-postgres.render.com/codeblocks_0g0b",
+  {
+    dialect: "postgres",
+    logging: false,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
+  }
+);
 
 const CodeBlock = sequelize.define(
-  "codeblocks",
+  "codeblocs",
   {
     serial: {
       type: DataTypes.INTEGER,

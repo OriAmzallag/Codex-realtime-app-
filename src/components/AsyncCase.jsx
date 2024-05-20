@@ -5,7 +5,7 @@ import "codemirror/mode/javascript/javascript";
 import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom"; // Import withRouter
 
-const FirstCase = () => {
+const AsyncCase = () => {
   const [editorValue, setEditorValue] = useState("");
   const [isReadOnly, setReadOnly] = useState(false);
   const [socket, setSocket] = useState(null);
@@ -14,7 +14,7 @@ const FirstCase = () => {
     // Function to fetch data from db.
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/FirstCase");
+        const response = await fetch("http://localhost:3001/AsyncCase");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -80,4 +80,4 @@ const FirstCase = () => {
   );
 };
 
-export default FirstCase;
+export default AsyncCase;
