@@ -9,7 +9,7 @@ const app = express();
 // CORS middleware
 app.use(
   cors({
-    origin: "http://localhost:3000", // Allow requests from this origin
+    origin: process.env.CLIENT_URL, // Allow requests from this origin
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: "Content-Type, Authorization",
     credentials: true,
@@ -20,7 +20,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     // Allowing CORS from port 3000
-    origin: "http://localhost:3000",
+    origin: "https://codex-realtime-app.netlify.app",
     methods: ["GET", "POST"],
   },
 });
@@ -55,7 +55,7 @@ io.on("connection", (socket) => {
 
 app.use("/", routes);
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 server.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });

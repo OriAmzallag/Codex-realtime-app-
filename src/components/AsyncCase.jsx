@@ -14,7 +14,7 @@ const AsyncCase = () => {
     // Function to fetch data from db.
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/AsyncCase");
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/AsyncCase`);
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -28,7 +28,7 @@ const AsyncCase = () => {
     fetchData();
 
     // Connection to the socket
-    const socket = io.connect("http://localhost:3001");
+    const socket = io.connect(process.env.REACT_APP_BACKEND_URL);
     setSocket(socket);
 
     // Changing the code in realtime

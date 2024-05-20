@@ -1,18 +1,18 @@
 import { Sequelize, DataTypes } from "sequelize";
+import dotenv from "dotenv";
 
-const sequelize = new Sequelize(
-  "postgres://codeblocks_0g0b_user:jr7uxTmX3nrQrqBFPMU2zAOiBPlsds0k@dpg-cp5m4221hbls73fi2j1g-a.oregon-postgres.render.com/codeblocks_0g0b",
-  {
-    dialect: "postgres",
-    logging: false,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
+dotenv.config(); // Load environment variables from .env file
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres",
+  logging: false,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
     },
-  }
-);
+  },
+});
 
 const CodeBlock = sequelize.define(
   "codeblocs",
