@@ -3,6 +3,9 @@ import http from "http";
 import { Server } from "socket.io";
 import routes from "./routers/routes.js";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 
