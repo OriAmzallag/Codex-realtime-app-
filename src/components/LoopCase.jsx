@@ -35,7 +35,8 @@ const LoopCase = () => {
       setEditorValue(msg);
     });
 
-    socket.on("user status", (readOnly) => {
+    socket.on("user status", (role) => {
+      const readOnly = role === "mentor";
       setReadOnly(readOnly);
     });
 
@@ -49,12 +50,11 @@ const LoopCase = () => {
   }, []); // Empty dependency array to run the effect only once
 
   const handleChange = (editor, data, value) => {
-    setEditorValue(value); // Update local state with the new value
-    if (!isReadOnly && value.trim()) {
-      // Emit the updated code to the server
-      socket.emit("text change", value);
-    }
-  };
+    if (!isReadOnly) {
+     // Emit the updated code to the server
+    socket.emit("text change", value);
+   }
+ };
 
   const navigate = useNavigate();
 

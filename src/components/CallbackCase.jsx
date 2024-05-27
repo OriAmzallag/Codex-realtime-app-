@@ -36,7 +36,8 @@ const CallbackCase = () => {
       setEditorValue(msg);
     });
 
-    socket.on("user status", (readOnly) => {
+    socket.on("user status", (role) => {
+      const readOnly = role === "mentor";
       setReadOnly(readOnly);
     });
     
@@ -50,18 +51,17 @@ const CallbackCase = () => {
   }, []); // Empty dependency array to run the effect only once
 
   const handleChange = (editor, data, value) => {
-    setEditorValue(value); // Update local state with the new value
-    if (!isReadOnly && value.trim()) {
-      // Emit the updated code to the server
-      socket.emit("text change", value);
-    }
-  };
+    if (!isReadOnly) {
+     // Emit the updated code to the server
+    socket.emit("text change", value);
+   }
+ };
 
   const navigate = useNavigate();
 
   return (
     <>
-      <h1>Event Handling Case: Preventing Default Behavior</h1>
+      <h1>Callback Case: Correcting Callback Execution in a Loop</h1>
       <div>
         <CodeMirror
           value={editorValue}
