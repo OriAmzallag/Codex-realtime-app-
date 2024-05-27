@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       "https://codex-realtime-app.netlify.app",
-      "https://664bc92bda79e83a8db96297--codex-realtime-app.netlify.app",
+      "https://66545cf7620e7f84784d8fbe--codex-realtime-app.netlify.app/",
     ], // Add both URLs
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: "Content-Type, Authorization",
