@@ -4,7 +4,7 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/mode/javascript/javascript";
 import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom"; // Import withRouter
-import { Skeleton } from '@mui/material';
+import { Skeleton, Box } from '@mui/material';
 
 
 const CasePage = ({ caseName, title }) => {
@@ -70,12 +70,15 @@ const CasePage = ({ caseName, title }) => {
   return (
     <>
       <h1>{title}</h1>
-      {loading ? 
-      <Skeleton width="20%" height={30} sx={{ bgcolor: 'grey.800' }} /> 
-      : 
-      <p className="role">{isReadOnly ? "Mentor" : "student"}</p>}
+      <Box display="flex" flexDirection="column" alignItems="center">
+        {loading ? (
+          <Skeleton width="20%" height={30} sx={{ bgcolor: 'grey.800' }} />
+        ) : (
+          <p className="role">{isReadOnly ? "Mentor" : "Student"}</p>
+        )}
+      </Box>
       {loading ? (
-        <>
+        <Box display="flex" flexDirection="column" alignItems="center">
           <Skeleton
             variant="rectangular"
             width="100%"
@@ -91,7 +94,7 @@ const CasePage = ({ caseName, title }) => {
             }}
           />
           <Skeleton width="60%" height={30} sx={{ bgcolor: 'grey.800' }} />
-        </>
+        </Box>
       ) : (
         <div>
           <CodeMirror
