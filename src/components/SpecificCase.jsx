@@ -2,7 +2,7 @@ import React from "react";
 import CasePage from "./CasePage";
 
 export const AsyncCase = () => (
-  <CasePage caseName="AsyncCase" title={`Async Case: Incorrect Async \n Function Usage`} />
+  <CasePage caseName="AsyncCase" title={`Async Case: Incorrect Async Function Usage`} />
 );
 export const CallbackCase = () => (
   <CasePage caseName="CallbackCase" title="Callback Case: Correcting Callback Execution in a Loop" />
