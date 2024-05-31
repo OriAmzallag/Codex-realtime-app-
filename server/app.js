@@ -12,10 +12,7 @@ const app = express();
 // CORS middleware
 app.use(
   cors({
-    origin: [
-      process.env.CLIENT_URL,
-      "https://66545cf7620e7f84784d8fbe--codex-realtime-app.netlify.app/",
-    ],
+    origin: [process.env.CLIENT_URL, process.env.CLIENT_URL2],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: "Content-Type, Authorization",
     credentials: true,
@@ -25,10 +22,7 @@ app.use(
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [
-      process.env.CLIENT_URL,
-      "https://664bc92bda79e83a8db96297--codex-realtime-app.netlify.app",
-    ],
+    origin: [process.env.CLIENT_URL, process.env.CLIENT_URL],
     methods: ["GET", "POST"],
   },
 });
