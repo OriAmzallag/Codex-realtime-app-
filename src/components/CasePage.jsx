@@ -71,7 +71,7 @@ const CasePage = ({ caseName, title }) => {
     <>
       <h1>{title}</h1>
       {loading ? 
-      <Skeleton width="60%" height={30} sx={{ bgcolor: 'grey.800' }} /> 
+      <Skeleton width="20%" height={30} sx={{ bgcolor: 'grey.800' }} /> 
       : 
       <p className="role">{isReadOnly ? "Mentor" : "student"}</p>}
       {loading ? (
