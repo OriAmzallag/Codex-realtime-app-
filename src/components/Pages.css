@@ -14,10 +14,22 @@ h2 {
   font-feature-settings: "ss01" 0, "ss02" 0, "ss03" 0;
   letter-spacing: 0.01em;
   margin: 0;
-  font-size: 5.313rem;
+  font-size: 5rem;
   line-height: 1.04;
   text-align: center;
-  padding-bottom: 70px;
+  padding-bottom: 30px;
+}
+
+p,
+h3 {
+  color: white;
+  font-feature-settings: "ss01" 0, "ss02" 0, "ss03" 0;
+  letter-spacing: 0.01em;
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1.04;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .message {
@@ -39,6 +51,7 @@ h2 {
 .container {
   display: flex;
   justify-content: space-evenly;
+  padding-top: 45px;
 }
 
 .button,
@@ -70,4 +83,8 @@ h2 {
 
 .homeClick:hover {
   transform: translateY(-10px);
+}
+
+#rule {
+  padding-top: 100px;
 }

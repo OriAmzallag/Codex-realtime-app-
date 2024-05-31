@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Codex - Your Code Solution for COVID
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Codex is an interactive platform designed to help teachers and students engage in real-time coding lessons. It features different coding challenges related to common JavaScript issues such as async function usage, callback execution in loops, and event handling.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Real-Time Code Editing:** Students can edit code in real-time, with changes being reflected instantly for all participants.
+- **Role-Based Access:** Mentors have read-only access while students can modify the code.
+- **Interactive Lessons:** Each lesson focuses on a specific coding challenge with an integrated code editor for hands-on practice.
+- **Socket.IO Integration:** Real-time updates are facilitated using Socket.IO, ensuring seamless collaboration.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React:** Front-end framework for building the user interface.
+- **Socket.IO:** For real-time communication between the client and server.
+- **CodeMirror:** A versatile text editor implemented in JavaScript for the code editing interface.
+- **React Router:** For navigation and routing within the app.
+- **Express:** Backend framework to handle API requests and WebSocket connections.
+- **Netlify:** For deployment of the front-end application.
+- **Render:** For deployment of the back-end server.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. **Clone the Repository:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```sh
+   git clone https://github.com/OriAmzallag/Codex.git
+   cd Codex
 
-### `npm run build`
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Install Dependencies:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Set Up Environment Variables:**
 
-### `npm run eject`
+   REACT_APP_BACKEND_URL=http://your-backend-url
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. **Run the Application:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project Structure
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **/components:** Contains all the React components for different cases.
+- **/App.tsx:** Main application file with route definitions.
+- **/index.tsx:** Entry point of the React application.
 
-## Learn More
+## Routes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Navigate to the HomePage:**
+   Access the main page where you can choose the coding challenge you want to work on
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Select a Code Block:**
+   Click on any of the cases to start the lesson and access the code editor.
+
+3. **Real-Time Collaboration:**
+   As a student, edit the code and see changes in real-time. Mentors can observe the changes and provide guidance.
+
+## Deployment
+
+The project is deployed on Netlify for the front-end and Heroku for the back-end. You can access the live application in the URL: https://codex-realtime-app.netlify.app/
+
+## Contributing
+
+Feel free to fork the repository and submit pull requests. For major changes, please open an issue to discuss what you would like to change.
+
+Happy coding!

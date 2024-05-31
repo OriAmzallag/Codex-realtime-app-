@@ -9,7 +9,8 @@ router.get("/:caseName", async (req, res) => {
     const code = await getCodeBlockByCaseName(caseName);
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://codex-realtime-app.netlify.app"
+      // "https://codex-realtime-app.netlify.app"
+      "http://localhost:3000"
     );
     res.send(code);
   } catch (error) {
