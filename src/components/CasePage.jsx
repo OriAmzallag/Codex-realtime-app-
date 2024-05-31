@@ -70,7 +70,10 @@ const CasePage = ({ caseName, title }) => {
   return (
     <>
       <h1>{title}</h1>
-      <p className="role">{isReadOnly ? "Mentor" : "student"}</p>
+      {loading ? 
+      <Skeleton width="60%" height={30} sx={{ bgcolor: 'grey.800' }} /> 
+      : 
+      <p className="role">{isReadOnly ? "Mentor" : "student"}</p>}
       {loading ? (
         <>
           <Skeleton
