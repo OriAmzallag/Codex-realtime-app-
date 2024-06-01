@@ -26,8 +26,11 @@ const CasePage = ({ caseName, title }) => {
         const data = await response.text();
         setEditorValue(data);
 
-        // Set loading to false after data is fetched
-        setLoading(false); 
+        // Set loading to false after data is fetched with delay.
+        setTimeout(() => {
+          setLoading(false); 
+        },500);
+
       } catch (error) {
         console.error("Failed to fetch data:", error);
       }
